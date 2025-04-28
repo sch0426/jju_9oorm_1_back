@@ -1,0 +1,27 @@
+
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/testJPA2
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  application:
+    name:  groom_back
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql:  true
+    properties:
+      hibernate:
+        format_sql:  true
+
+
+
+
+#    datasource:
+#      url: jdbc:h2:tcp://localhost/~/testJPA2
+#      username: sa
+#      password:
+#      driver-class-name: org.h2.Driver
+
