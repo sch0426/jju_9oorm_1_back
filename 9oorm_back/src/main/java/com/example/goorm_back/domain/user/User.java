@@ -2,6 +2,8 @@ package com.example.goorm_back.domain.user;
 
 import com.example.goorm_back.domain.utility.Payment;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class User {
@@ -15,6 +17,7 @@ public class User {
     private String phoneNumber;
 
     private String userName;
+
 
     private String password;
 
