@@ -1,6 +1,6 @@
 package com.example.goorm_back.domain.clazz;
 
-import com.example.goorm_back.domain.user.User;
+import com.example.goorm_back.domain.user.Member;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -18,8 +18,8 @@ public class ClazzReservation {
     private Clazz clazz;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "member_id")
+    private Member member;
 
     @CreationTimestamp
     private LocalDateTime reservationTime;
