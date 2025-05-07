@@ -1,14 +1,12 @@
 package com.example.goorm_back.domain.board;
 
-import com.example.goorm_back.domain.user.User;
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
+import com.example.goorm_back.domain.user.Member;
+import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
+@Entity
 public class NoticeBoard {
 
     @Id
@@ -21,7 +19,9 @@ public class NoticeBoard {
     @Lob
     private String contents; //내용
 
-    private User user;
+    @ManyToOne
+    @JoinColumn(name = "member_id")
+    private Member member;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
