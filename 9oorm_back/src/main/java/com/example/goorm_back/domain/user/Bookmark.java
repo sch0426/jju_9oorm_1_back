@@ -1,11 +1,9 @@
 package com.example.goorm_back.domain.user;
 
 import com.example.goorm_back.domain.clazz.Clazz;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -15,6 +13,8 @@ public class Bookmark {
     @Column(name = "book_mark_id")
     private Long id;
 
-    private List<Clazz> clazz;
+    @OneToMany
+    @JoinColumn(name = "book_mark_id")
+    private List<Clazz> clazzes = new ArrayList<>();
 
 }

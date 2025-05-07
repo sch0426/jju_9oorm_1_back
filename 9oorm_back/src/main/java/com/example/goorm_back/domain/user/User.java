@@ -1,9 +1,16 @@
 package com.example.goorm_back.domain.user;
 
+import com.example.goorm_back.domain.board.BoardComment;
+import com.example.goorm_back.domain.board.CommunityBoard;
+import com.example.goorm_back.domain.clazz.ClazzReservation;
+import com.example.goorm_back.domain.clazz.ReviewBoard;
 import com.example.goorm_back.domain.utility.Payment;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class User {
@@ -33,11 +40,27 @@ public class User {
     @Column(unique = true)
     private String nickname;
 
+    @OneToOne
     private Payment payment; //결제정보
 
+    @OneToOne
     private Cart cart;
 
+    @OneToOne
     private Bookmark bookmark;
+
+    @OneToMany(mappedBy = "user", orphanRemoval = true)
+    private List<ReviewBoard> reviewBoards = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", orphanRemoval = true)
+    private List<ClazzReservation> classReservations = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", orphanRemoval = true)
+    private List<CommunityBoard> communityBoards = new ArrayList<>();
+
+   @OneToMany(mappedBy = "user", orphanRemoval = true)
+    private List<BoardComment> boardComments = new ArrayList<>();
+
 
 
 

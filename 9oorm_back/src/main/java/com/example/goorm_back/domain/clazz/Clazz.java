@@ -1,14 +1,13 @@
 package com.example.goorm_back.domain.clazz;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Clazz {
+
     @Id @GeneratedValue
     @Column(name = "clazz_id")
     private Long id;
@@ -40,7 +39,11 @@ public class Clazz {
 
     private ClazzAcceptStatus acceptStatus; //예약 가능여부
 
+    @OneToMany(mappedBy = "clazz", orphanRemoval = true)
     private List<ReviewBoard> reviewBoard; //리뷰
+
+    @OneToMany(mappedBy = "clazz", orphanRemoval = true)
+    private List<ClazzReservation> clazzReservations = new ArrayList<>();
 
 
 
