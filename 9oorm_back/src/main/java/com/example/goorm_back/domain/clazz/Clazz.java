@@ -1,11 +1,15 @@
 package com.example.goorm_back.domain.clazz;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
 public class Clazz {
 
     @Id @GeneratedValue
@@ -44,6 +48,9 @@ public class Clazz {
 
     @OneToMany(mappedBy = "clazz", orphanRemoval = true)
     private List<ClazzReservation> clazzReservations = new ArrayList<>();
+
+    @Enumerated(EnumType.STRING)
+    private ReservationStatus reservationStatus;
 
 
 
