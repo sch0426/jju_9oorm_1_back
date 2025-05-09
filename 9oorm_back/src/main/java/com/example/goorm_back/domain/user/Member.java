@@ -7,12 +7,16 @@ import com.example.goorm_back.domain.clazz.ClazzReservation;
 import com.example.goorm_back.domain.clazz.ReviewBoard;
 import com.example.goorm_back.domain.utility.Payment;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 @Entity
+@Getter
+@Setter
 public class Member {
 
     @Id @GeneratedValue

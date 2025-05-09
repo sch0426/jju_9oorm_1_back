@@ -2,11 +2,15 @@ package com.example.goorm_back.domain.clazz;
 
 import com.example.goorm_back.domain.user.Member;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
+@Setter
 public class ClazzReservation {
 
     @Id @GeneratedValue
@@ -24,5 +28,5 @@ public class ClazzReservation {
     @CreationTimestamp
     private LocalDateTime reservationTime;
 
-    private ReservationStatus reservationStatus;
+
 }

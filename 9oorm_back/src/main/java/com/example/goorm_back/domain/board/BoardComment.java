@@ -2,6 +2,8 @@ package com.example.goorm_back.domain.board;
 
 import com.example.goorm_back.domain.user.Member;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
@@ -11,6 +13,8 @@ import java.time.LocalDateTime;
  */
 
 @Entity
+@Getter
+@Setter
 public class BoardComment {
     @Id @GeneratedValue
     @Column(name = "board_comment_id")
