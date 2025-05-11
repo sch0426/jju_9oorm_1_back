@@ -28,5 +28,11 @@ public class ClazzReservation {
     @CreationTimestamp
     private LocalDateTime reservationTime;
 
+    /*
+    * 클래스 예약 날짜, 클래스 예약 시작 시간, 예약 인원 수 추가해야 될 것 같습니다.
+    * 추가로 예약 취소를 하게되면 환불을 해야하니
+    * 결제 정보도 가지고 있어야 하는건지..?!
+    */
+
 
 }
